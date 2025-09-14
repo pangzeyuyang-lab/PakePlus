@@ -211,7 +211,8 @@ jobs:
               run: pnpm install
 
             - name: GitPress Config
-              run: node ./scripts/gitpress.cjs gitBase
+              run: node ${{ github.workspace }}/scripts/gitpress.cjs gitBase
+              working-directory: ${{ github.workspace }}
 
             - name: Build with VitePress
               run: pnpm run docs:build
@@ -234,3 +235,4 @@ jobs:
             - name: Deploy to GitHub Pages
               id: deployment
               uses: actions/deploy-pages@v4
+
