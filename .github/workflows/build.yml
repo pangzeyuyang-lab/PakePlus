@@ -5,8 +5,8 @@ on:
     push:
         tags:
             - 'v*'
-        # branches:
-        #     - 'main'
+        branches:
+            - 'main'
 
 jobs:
     publish-tauri:
@@ -98,5 +98,6 @@ jobs:
                   publish: true
                   args: ${{ matrix.args }}
                   renameArtifacts: 'PakePlus'
+
 
 
