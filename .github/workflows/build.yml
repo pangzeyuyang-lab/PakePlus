@@ -3,10 +3,10 @@ name: Release
 on:
     workflow_dispatch:
     push:
-        tags:
-            - 'v*'
         branches:
             - 'main'
+        tags:
+            - 'v*'
 
 jobs:
     publish-tauri:
@@ -98,6 +98,7 @@ jobs:
                   publish: true
                   args: ${{ matrix.args }}
                   renameArtifacts: 'PakePlus'
+
 
 
 
